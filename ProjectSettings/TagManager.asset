@@ -3,12 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Key
+  - Text
+  - door
+  - player
+  - Chest
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - UI2
   - Water
   - UI
   - 
@@ -43,4 +48,10 @@ TagManager:
     locked: 0
   - name: New Layer 1
     uniqueID: 438792395
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 2101414893
+    locked: 0
+  - name: New Layer 3
+    uniqueID: 124330735
     locked: 0
