@@ -9,6 +9,9 @@ TagManager:
   - door
   - player
   - Chest
+  - Portal
+  - Enemy
+  - Enemy2
   layers:
   - Default
   - TransparentFX
@@ -16,8 +19,8 @@ TagManager:
   - UI2
   - Water
   - UI
-  - 
-  - 
+  - player
+  - Enemy
   - 
   - 
   - 

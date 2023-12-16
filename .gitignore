@@ -141,7 +141,14 @@ _TeamCity*
 # AxoCover is a Code Coverage Tool
 .axoCover/*
 !.axoCover/settings.json
-
+/Library/BurstCache
+/Library/GrindCache
+/Library/ScriptAssemblies
+/Library/PackageCache
+/Library/PlayerDataCache
+/Library/ShaderCache
+/Library/SplashScreenCache
+/Library/StateCache
 # Coverlet is a free, cross platform Code Coverage Tool
 coverage*.json
 coverage*.xml
@@ -155,8 +162,8 @@ coverage*.info
 _NCrunch_*
 .*crunch*.local.xml
 nCrunchTemp_*
-
-# MightyMoose
+/Temp
+# MightyMoosef
 *.mm.*
 AutoTest.Net/
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
     private Animator animator;
-
+    public KeyManager km;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,4 +39,17 @@ public class PlayerController : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Key"))
+        {
+            Destroy(other.gameObject);
+            km.KeyCount++;
+        }
+    }
+
+
+
+
 }

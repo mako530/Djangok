@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class EnemyAI : MonoBehaviour
     public float speed;
     public float checkRadius;
     public float attackRadius;
+    public static int Hp = 6;
+
 
     public bool shouldRotate;
 
@@ -24,7 +27,7 @@ public class EnemyAI : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        target = GameObject.FindGameObjectWithTag("Player").transform; // Javítás: "FindWithTag" helyett "FindGameObjectWithTag"
+        target = GameObject.FindGameObjectWithTag("player").transform; // Javítás: "FindWithTag" helyett "FindGameObjectWithTag"
     }
 
     private void Update()
@@ -44,6 +47,10 @@ public class EnemyAI : MonoBehaviour
             anim.SetFloat("X", dir.x);
             anim.SetFloat("Y", dir.y);
         }
+        if(Hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void FixedUpdate()
@@ -62,4 +69,11 @@ public class EnemyAI : MonoBehaviour
     {
         rb.MovePosition((Vector2)transform.position + (dir * speed * Time.deltaTime));
     }
+
+    public void TakeDamage(int damage) {
+        Hp -= damage;
+        Debug.Log("Damage tanken");
+    }
+
+
 }
